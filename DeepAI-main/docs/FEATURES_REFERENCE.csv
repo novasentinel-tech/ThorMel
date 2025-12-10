@@ -1,0 +1,88 @@
+Feature_ID,Feature_Name,Category,Description,Range,Data_Type,Importance,Extraction_Method
+HTTP_01,http_01_response_time,HTTP_Performance,HTTP response time in milliseconds,0-5000,float32,Medium,HEAD_request
+HTTP_02,http_02_redirect_count,HTTP_Redirect,Number of HTTP redirects in chain,0+,float32,Low,Follow_redirects
+HTTP_03,http_03_has_hsts,HTTP_Security,Binary: Has HSTS header present,0-1,float32,High,Header_check
+HTTP_04,http_04_hsts_max_age,HTTP_Security,HSTS max-age value normalized,0-1,float32,High,Parse_header
+HTTP_05,http_05_has_csp,HTTP_Security,Binary: Has Content Security Policy,0-1,float32,High,Header_check
+HTTP_06,http_06_csp_directives,HTTP_Security,Number of CSP directives,0-15,float32,Medium,Parse_CSP
+HTTP_07,http_07_has_x_frame_options,HTTP_Security,Binary: Has X-Frame-Options header,0-1,float32,High,Header_check
+HTTP_08,http_08_has_x_content_type_options,HTTP_Security,Binary: Has X-Content-Type-Options,0-1,float32,High,Header_check
+HTTP_09,http_09_has_referrer_policy,HTTP_Security,Binary: Has Referrer-Policy header,0-1,float32,Medium,Header_check
+HTTP_10,http_10_security_headers_count,HTTP_Security,Count of security headers present,0-9,float32,High,Header_count
+HTTP_11,http_11_cookie_count,HTTP_Cookies,Total number of HTTP cookies,0-50,float32,Medium,Parse_cookies
+HTTP_12,http_12_secure_cookies_ratio,HTTP_Cookies,Ratio of cookies with Secure flag,0-1,float32,High,Check_cookie_flags
+HTTP_13,http_13_httponly_cookies_ratio,HTTP_Cookies,Ratio of cookies with HttpOnly flag,0-1,float32,High,Check_cookie_flags
+HTTP_14,http_14_server_exposed,HTTP_Exposure,Binary: Server version is disclosed,0-1,float32,High,Check_server_header
+HTTP_15,http_15_honeypot_risk,HTTP_Honeypot,Honeypot detection probability score,0-1,float32,Low,Honeypot_detector
+TLS_01,tls_01_protocol_score,TLS_Protocol,TLS protocol version score,0-1.3,float32,High,Protocol_detection
+TLS_02,tls_02_is_deprecated,TLS_Protocol,Binary: Uses deprecated TLS version,0-1,float32,High,Version_check
+TLS_03,tls_03_supports_tls13,TLS_Protocol,Binary: Supports TLSv1.3,0-1,float32,High,Protocol_check
+TLS_04,tls_04_cipher_strength,TLS_Cipher,Cipher strength in bits normalized,0-1,float32,High,Cipher_analysis
+TLS_05,tls_05_forward_secrecy,TLS_Cipher,Binary: Has forward secrecy,0-1,float32,High,PFS_check
+TLS_06,tls_06_self_signed_cert,TLS_Certificate,Binary: Certificate is self-signed,0-1,float32,High,Cert_validation
+TLS_07,tls_07_cert_expired,TLS_Certificate,Binary: Certificate is expired,0-1,float32,High,Date_check
+TLS_08,tls_08_days_until_expiry,TLS_Certificate,Days until certificate expiry normalized,0-1,float32,High,Date_calculation
+TLS_09,tls_09_vulnerability_count,TLS_Vulnerabilities,Count of known TLS vulnerabilities,0+,float32,High,CVE_database
+TLS_10,tls_10_has_poodle,TLS_Vulnerabilities,Binary: Has POODLE vulnerability,0-1,float32,High,Vuln_check
+TLS_11,tls_11_chain_length,TLS_Certificate,Certificate chain length,1-5,float32,Medium,Chain_analysis
+TLS_12,tls_12_has_ocsp,TLS_Features,Binary: Has OCSP stapling,0-1,float32,Medium,OCSP_check
+TLS_13,tls_13_has_sct,TLS_Features,Binary: Has Certificate Transparency,0-1,float32,Medium,CT_check
+TLS_14,tls_14_supported_protocols,TLS_Protocol,Count of supported TLS protocols,0-1,float32,Medium,Protocol_count
+TLS_15,tls_15_weak_ciphers,TLS_Cipher,Count of weak ciphers supported,0+,float32,High,Cipher_check
+TLS_16,tls_16_pfs_percentage,TLS_Cipher,Perfect forward secrecy ratio,0-1,float32,High,PFS_analysis
+TLS_17,tls_17_cert_valid,TLS_Certificate,Binary: Certificate is valid,0-1,float32,High,Cert_validation
+TLS_18,tls_18_security_score,TLS_Composite,Overall TLS security score,0-1,float32,High,Score_aggregation
+DNS_01,dns_01_has_a_record,DNS_Records,Binary: Has A record,0-1,float32,Medium,Record_check
+DNS_02,dns_02_has_aaaa_record,DNS_Records,Binary: Has AAAA record (IPv6),0-1,float32,Medium,Record_check
+DNS_03,dns_03_has_mx_record,DNS_Records,Binary: Has MX records,0-1,float32,High,Record_check
+DNS_04,dns_04_mx_count,DNS_Records,Count of MX servers,0-10,float32,Medium,Record_count
+DNS_05,dns_05_ns_count,DNS_Records,Count of nameservers normalized,0-1,float32,Medium,Record_count
+DNS_06,dns_06_has_spf,DNS_Email,Binary: Has SPF record,0-1,float32,High,Record_check
+DNS_07,dns_07_has_dmarc,DNS_Email,Binary: Has DMARC record,0-1,float32,High,Record_check
+DNS_08,dns_08_dnssec_enabled,DNS_Security,Binary: DNSSEC is enabled,0-1,float32,High,DNSSEC_check
+DNS_09,dns_09_has_caa,DNS_Certificate,Binary: Has CAA records,0-1,float32,High,Record_check
+DNS_10,dns_10_has_tlsa,DNS_Security,Binary: Has TLSA records,0-1,float32,Medium,Record_check
+DNS_11,dns_11_vulnerability_count,DNS_Vulnerabilities,Count of DNS vulnerabilities,0+,float32,Medium,CVE_database
+DNS_12,dns_12_email_security_score,DNS_Composite,Email security score SPF+DMARC+DNSSEC,0-1,float32,High,Score_aggregation
+WHOIS_01,whois_01_days_until_expiry,WHOIS_Expiry,Days until domain expiry normalized,0-1,float32,High,Date_calculation
+WHOIS_02,whois_02_expiration_risk,WHOIS_Expiry,Expiration risk level score,0-1,float32,High,Risk_assessment
+WHOIS_03,whois_03_domain_age_years,WHOIS_Age,Domain age in years normalized,0-1,float32,High,Date_calculation
+WHOIS_04,whois_04_has_privacy,WHOIS_Privacy,Binary: Has registrant privacy,0-1,float32,Medium,Privacy_check
+WHOIS_05,whois_05_registrar_reputation,WHOIS_Registrar,Registrar reputation score,0-1,float32,Medium,Reputation_lookup
+WHOIS_06,whois_06_has_tech_contact,WHOIS_Contact,Binary: Has technical contact,0-1,float32,Low,Contact_check
+WHOIS_07,whois_07_country_risk,WHOIS_Location,Registrant country risk score,0-1,float32,Medium,Country_risk_db
+WHOIS_08,whois_08_has_organization,WHOIS_Organization,Binary: Has organization info,0-1,float32,Low,Organization_check
+WHOIS_09,whois_09_nameserver_count,WHOIS_Infrastructure,Nameserver count normalized,0-1,float32,Medium,NS_count
+WHOIS_10,whois_10_trustworthiness_score,WHOIS_Composite,Overall domain trustworthiness,0-1,float32,High,Score_aggregation
+PORTS_01,ports_01_open_port_count,PORTS_Exposure,Total count of open ports,0-50,float32,High,Port_scan
+PORTS_02,ports_02_has_ssh,PORTS_Common,Binary: SSH port 22 open,0-1,float32,High,Port_check
+PORTS_03,ports_03_has_http,PORTS_Common,Binary: HTTP port 80 open,0-1,float32,High,Port_check
+PORTS_04,ports_04_has_https,PORTS_Common,Binary: HTTPS port 443 open,0-1,float32,High,Port_check
+PORTS_05,ports_05_has_db_port,PORTS_Database,Binary: Database port open,0-1,float32,High,Port_check
+PORTS_06,ports_06_ssh_version_detected,PORTS_Service,Binary: SSH version detected via banner,0-1,float32,Medium,Banner_grab
+PORTS_07,ports_07_web_service_count,PORTS_Web,Web service count normalized,0-1,float32,Medium,Service_detect
+PORTS_08,ports_08_db_service_count,PORTS_Database,Database service count normalized,0-1,float32,Medium,Service_detect
+PORTS_09,ports_09_unusual_ports_count,PORTS_Exposure,Count of unusual ports open,0-30,float32,Medium,Anomaly_detect
+PORTS_10,ports_10_banner_success_rate,PORTS_Service,Banner grabbing success rate,0-1,float32,Low,Banner_stats
+PORTS_11,ports_11_fingerprint_accuracy,PORTS_Service,Service fingerprint match accuracy,0-1,float32,Low,Fingerprint_match
+PORTS_12,ports_12_unknown_services_count,PORTS_Service,Count of unidentified services,0-20,float32,Medium,Service_detect
+PORTS_13,ports_13_has_mail_service,PORTS_Common,Binary: Mail service present,0-1,float32,Medium,Port_check
+PORTS_14,ports_14_has_rdp,PORTS_Common,Binary: RDP port 3389 open,0-1,float32,High,Port_check
+PORTS_15,ports_15_exposure_score,PORTS_Composite,Overall port exposure score,0-1,float32,High,Score_aggregation
+TECH_01,tech_01_technology_count,TECH_Stack,Technology count normalized,0-1,float32,Low,Tech_count
+TECH_02,tech_02_has_apache,TECH_Webserver,Binary: Apache web server detected,0-1,float32,Medium,Header_analysis
+TECH_03,tech_03_has_nginx,TECH_Webserver,Binary: Nginx web server detected,0-1,float32,Medium,Header_analysis
+TECH_04,tech_04_has_iis,TECH_Webserver,Binary: IIS web server detected,0-1,float32,Medium,Header_analysis
+TECH_05,tech_05_has_wordpress,TECH_CMS,Binary: WordPress CMS detected,0-1,float32,High,Content_analysis
+TECH_06,tech_06_has_drupal,TECH_CMS,Binary: Drupal CMS detected,0-1,float32,High,Content_analysis
+TECH_07,tech_07_has_php,TECH_Language,Binary: PHP language detected,0-1,float32,Medium,Server_tech
+TECH_08,tech_08_has_python,TECH_Language,Binary: Python language detected,0-1,float32,Medium,Server_tech
+TECH_09,tech_09_has_nodejs,TECH_Language,Binary: Node.js/Express detected,0-1,float32,Medium,Server_tech
+TECH_10,tech_10_has_java,TECH_Language,Binary: Java framework detected,0-1,float32,Medium,Server_tech
+TECH_11,tech_11_cms_detected,TECH_CMS,Binary: CMS platform detected,0-1,float32,High,Content_analysis
+TECH_12,tech_12_modern_framework,TECH_Framework,Binary: Modern framework detected,0-1,float32,Medium,Version_check
+TECH_13,tech_13_server_exposed,TECH_Exposure,Binary: Server version is exposed,0-1,float32,High,Header_check
+TECH_14,tech_14_vulnerability_count,TECH_Vulnerabilities,Count of known tech vulnerabilities,0-20,float32,High,CVE_database
+TECH_15,tech_15_outdated_tech,TECH_Age,Binary: Uses outdated technology,0-1,float32,High,Version_check
+TECH_16,tech_16_framework_diversity,TECH_Stack,Framework diversity score normalized,0-1,float32,Low,Diversity_calc
+TECH_17,tech_17_security_score,TECH_Composite,Overall technology security score,0-1,float32,High,Score_aggregation

@@ -1,0 +1,11 @@
+aiohttp
+beautifulsoup4
+cryptography
+dnspython
+fake-useragent
+PySocks
+requests
+schedule
+stem
+urllib3
+websockets

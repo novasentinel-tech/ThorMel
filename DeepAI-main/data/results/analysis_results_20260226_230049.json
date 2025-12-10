@@ -1,0 +1,161 @@
+[
+  {
+    "domain": "example.com",
+    "timestamp": "2026-02-26T23:00:49.134742",
+    "times": {
+      "collection": 0.38053393363952637,
+      "feature_engineering": 0.0032274723052978516,
+      "ml_prediction": 0.00039005279541015625,
+      "explanation": 0.015336036682128906,
+      "total": 0.40586352348327637
+    },
+    "ml_results": {
+      "prediction": "aviso",
+      "confidence": 0.5,
+      "top_features": {
+        "http_01": 0.0,
+        "http_02": 0.0,
+        "http_03": 0.0,
+        "http_04": 0.0,
+        "http_05": 0.0,
+        "http_06": 0.0,
+        "http_07": 0.0,
+        "http_08": 0.0,
+        "http_09": 0.0,
+        "http_10": 0.0
+      }
+    },
+    "rl_results": {
+      "action": null,
+      "confidence": null
+    },
+    "explanation": {
+      "introduction": "Esta an\u00e1lise indica um n\u00edvel **M\u00c9DIO** de risco de seguran\u00e7a.\n\n**Dom\u00ednio:** example.com",
+      "summary": "Foram identificadas v\u00e1rias quest\u00f5es de seguran\u00e7a que deveriam ser endere\u00e7adas.",
+      "explanation": "- F0 aumentou o risco (1.000)\n- F1 aumentou o risco (1.000)\n- F2 aumentou o risco (1.000)\n- F3 aumentou o risco (1.000)\n- F5 aumentou o risco (1.000)",
+      "recommendations": "Nenhuma recomenda\u00e7\u00e3o espec\u00edfica",
+      "confidence": "Este resultado foi produzido com confian\u00e7a moderada (score: 50.0%)",
+      "action_required": "A\u00e7\u00e3o remediativa \u00e9 recomendada dentro de 30 dias",
+      "risk_level": "aviso"
+    },
+    "quality": {
+      "fidelity": 0.0,
+      "stability": 0.8,
+      "sparsity": 0.8850574712643678,
+      "completeness": 0.3333333333333333,
+      "comprehensibility": 0.578404761904762,
+      "coverage": 1.0,
+      "actionability": 0.6000000000000001,
+      "overall_score": 0.5052664614121511
+    },
+    "report": "data/reports/example_com_report.html",
+    "status": "success",
+    "error": null
+  },
+  {
+    "domain": "google.com",
+    "timestamp": "2026-02-26T23:00:49.134773",
+    "times": {
+      "collection": 0.3746480941772461,
+      "feature_engineering": 0.000978231430053711,
+      "ml_prediction": 0.0002486705780029297,
+      "explanation": 0.0005390644073486328,
+      "total": 0.3773047924041748
+    },
+    "ml_results": {
+      "prediction": "aviso",
+      "confidence": 0.5,
+      "top_features": {
+        "http_01_response_time": 130.0,
+        "http_02_redirect_count": 0.0,
+        "http_03_has_hsts": 0.0,
+        "http_04_hsts_max_age": 0.0,
+        "http_05_has_csp": 0.0,
+        "http_06_csp_directives": 0.0,
+        "http_07_has_x_frame_options": 0.0,
+        "http_08_has_x_content_type_options": 0.0,
+        "http_09_has_referrer_policy": 0.0,
+        "http_10_security_headers_count": 8.0
+      }
+    },
+    "rl_results": {
+      "action": null,
+      "confidence": null
+    },
+    "explanation": {
+      "introduction": "Esta an\u00e1lise indica um n\u00edvel **M\u00c9DIO** de risco de seguran\u00e7a.\n\n**Dom\u00ednio:** google.com",
+      "summary": "Foram identificadas v\u00e1rias quest\u00f5es de seguran\u00e7a que deveriam ser endere\u00e7adas.",
+      "explanation": "- F12 aumentou o risco (130.000)\n- F21 aumentou o risco (8.000)\n- F22 aumentou o risco (4.000)\n- F0 aumentou o risco (1.000)\n- F1 aumentou o risco (1.000)",
+      "recommendations": "Nenhuma recomenda\u00e7\u00e3o espec\u00edfica",
+      "confidence": "Este resultado foi produzido com confian\u00e7a moderada (score: 50.0%)",
+      "action_required": "A\u00e7\u00e3o remediativa \u00e9 recomendada dentro de 30 dias",
+      "risk_level": "aviso"
+    },
+    "quality": {
+      "fidelity": 0.0,
+      "stability": 0.8,
+      "sparsity": 0.8433734939759037,
+      "completeness": 0.3333333333333333,
+      "comprehensibility": 0.5792380952380952,
+      "coverage": 1.0,
+      "actionability": 0.6000000000000001,
+      "overall_score": 0.5012230636833047
+    },
+    "report": "data/reports/google_com_report.html",
+    "status": "success",
+    "error": null
+  },
+  {
+    "domain": "github.com",
+    "timestamp": "2026-02-26T23:00:49.134789",
+    "times": {
+      "collection": 0.31418585777282715,
+      "feature_engineering": 0.0009338855743408203,
+      "ml_prediction": 0.00022864341735839844,
+      "explanation": 0.0005605220794677734,
+      "total": 0.3167710304260254
+    },
+    "ml_results": {
+      "prediction": "aviso",
+      "confidence": 0.5,
+      "top_features": {
+        "http_01_response_time": 53.0,
+        "http_02_redirect_count": 0.0,
+        "http_03_has_hsts": 0.0,
+        "http_04_hsts_max_age": 0.0,
+        "http_05_has_csp": 0.0,
+        "http_06_csp_directives": 0.0,
+        "http_07_has_x_frame_options": 0.0,
+        "http_08_has_x_content_type_options": 0.0,
+        "http_09_has_referrer_policy": 0.0,
+        "http_10_security_headers_count": 8.0
+      }
+    },
+    "rl_results": {
+      "action": null,
+      "confidence": null
+    },
+    "explanation": {
+      "introduction": "Esta an\u00e1lise indica um n\u00edvel **M\u00c9DIO** de risco de seguran\u00e7a.\n\n**Dom\u00ednio:** github.com",
+      "summary": "Foram identificadas v\u00e1rias quest\u00f5es de seguran\u00e7a que deveriam ser endere\u00e7adas.",
+      "explanation": "- F12 aumentou o risco (53.000)\n- F21 aumentou o risco (8.000)\n- F3 aumentou o risco (5.000)\n- F22 aumentou o risco (3.000)\n- F4 aumentou o risco (2.000)",
+      "recommendations": "Nenhuma recomenda\u00e7\u00e3o espec\u00edfica",
+      "confidence": "Este resultado foi produzido com confian\u00e7a moderada (score: 50.0%)",
+      "action_required": "A\u00e7\u00e3o remediativa \u00e9 recomendada dentro de 30 dias",
+      "risk_level": "aviso"
+    },
+    "quality": {
+      "fidelity": 0.0,
+      "stability": 0.8,
+      "sparsity": 0.8554216867469879,
+      "completeness": 0.3333333333333333,
+      "comprehensibility": 0.5790714285714286,
+      "coverage": 1.0,
+      "actionability": 0.6000000000000001,
+      "overall_score": 0.5024028829604131
+    },
+    "report": "data/reports/github_com_report.html",
+    "status": "success",
+    "error": null
+  }
+]
